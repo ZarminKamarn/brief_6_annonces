@@ -33,8 +33,12 @@ class JobController extends Controller{
     }
 
     public displayDeleteJob(){
-        const id = this.request.params.id;
-        this.response.render("pages/deleteJob");
+        const id: number = parseInt(this.request.params.id) - 1;
+        if(jobOffers[id]){
+            this.response.render("pages/deleteJob", { job: jobOffers[id] });
+            return;
+        }
+        this.response.send("404");
     }
 
     public deleteJob(){

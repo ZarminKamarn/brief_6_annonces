@@ -5,12 +5,11 @@
     <a href="/jobs">Annuler</a>
     <section>
         <h2>Édition de l'annonce : <%= job.title %></h2>
-        <form action="/jobs" method="post">
+        <form action="/jobs" method="put">
             <%- include('../partials/passwordDiv') %>
             <%- include('../partials/formContent', job) %>
         </form>
     </section>
-    
 </main>
 
 <%- include('../partials/footer') %>

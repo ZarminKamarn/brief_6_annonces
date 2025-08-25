@@ -1,4 +1,14 @@
 <%- include('../partials/head', {title:'Supprimer une annonce'}) %>
 <%- include('../partials/header') %>
 
+<main>
+    <a href="/jobs">Annuler</a>
+    <section>
+        <h2>Suppression de l'annonce : <%= job.title %></h2>
+        <form action="/jobs" method="delete">
+            <%- include('../partials/passwordDiv') %>
+        </form>
+    </section>
+</main>
+
 <%- include('../partials/footer') %>
