@@ -1,18 +1,23 @@
+import { jobOffers } from "../data/data";
 import Controller from "../libs/Controller";
 
 class JobController extends Controller{
     public displayJobs(){
-        this.response.send("BROWSE JOBS");
+        this.response.render("pages/browseJobs", { jobOffers });
     }
 
     public displayJob(){
         const id = this.request.params.id;
-        this.response.send("READ JOB "+id);
+        this.response.render("pages/readJob");
     }
 
     public displayEditJob(){
-        const id = this.request.params.id;
-        this.response.send("EDIT JOB "+id);
+        const id: number = parseInt(this.request.params.id) - 1;
+        if(jobOffers[id]){
+            this.response.render("pages/editJob", { job: jobOffers[id] });
+            return;
+        }
+        this.response.send("404");
     }
 
     public editJob(){
@@ -20,7 +25,7 @@ class JobController extends Controller{
     }
 
     public displayAddJob(){
-        this.response.send("ADD JOB");
+        this.response.render("pages/addJob");
     }
 
     public addJob(){
@@ -29,7 +34,7 @@ class JobController extends Controller{
 
     public displayDeleteJob(){
         const id = this.request.params.id;
-        this.response.send("DELETE JOB "+id);
+        this.response.render("pages/deleteJob");
     }
 
     public deleteJob(){

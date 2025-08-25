@@ -1,0 +1,38 @@
+<div>
+    <div>
+        <label for="title">Titre de l'annonce</label>
+        <input type="text" name="title" id="title" placeholder="Recherche talent junior" value="<%= job?.title || '' %>">
+    </div>
+    <div>
+        <label for="description">Description de l'offre</label>
+        <textarea name="description" id="description" placeholder="..."><%= job?.description || '' %></textarea>
+    </div>
+    <div>
+        <label for="skills">Compétence(s) Recherchée(s)</label>
+        <select name="skills" id="skills">
+            <option>Sélectionner les compétences</option>
+        </select>
+    </div>
+</div>
+<div>
+    <div>
+        <label for="type">Type de contrat</label>
+        <select name="type" id="type">
+            <option>Freelance, CDI, ...</option>
+        </select>
+    </div>
+    <div>
+        <label for="startDate">Date onboarding</label>
+        <input type="date" name="start-date" id="startDate" placeholder="jj/mm/aaaa" value="<%= job?.startDate.toISOString().split('T')[0] || '' %>">
+    </div>
+    <div>
+        <label for="salary">Salaire</label>
+        <input type="text" name="salary" id="salary" placeholder="... €" value="<%= job?.salary.toString() || '' %>">
+    </div>
+    <div>
+        <label for="salaryUnit">Unité de salaire</label>
+        <select name="salary-unit" id="salaryUnit">
+            
+        </select>
+    </div>
+</div>

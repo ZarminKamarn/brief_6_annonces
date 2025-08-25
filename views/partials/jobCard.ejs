@@ -1,0 +1,16 @@
+<div>
+    <h3><%= job.title %></h3>
+    <p><%= job.description %></p>
+    <div>
+        <ul>
+            <% job.skills.forEach(skill => { %>
+                <li><%= skill %></li>
+            <% }) %>
+        </ul>
+        <% if(job.datePosted.toDateString() == (new Date()).toDateString()) { %>
+            <p>Publié aujourd'hui</p>
+        <% } else { %>
+            <p>job.datePosted.toDateString()</p>
+        <% } %>
+    </div>
+</div>
