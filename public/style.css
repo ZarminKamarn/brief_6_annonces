@@ -1,0 +1,230 @@
+:root{
+    --primary-100 : #154D71;
+    --primary-65 : rgba(21, 77, 113, 0.65);
+    --primary-30 : rgba(21, 77, 113, 0.3);
+
+    --secondary-100 : #CFAB8D;
+    --secondary-65 : rgba(207, 171, 141, 0.65);
+    --secondary-30 : rgba(207, 171, 141, 0.3);
+
+    --black : #0F0E0E;
+    --white : #FDFDFD;
+    --background : #F9F6F3;
+    --gray-dark : #4C4C4C;
+    --gray-light : #DADAD7;
+}
+
+*{
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: "Roboto Condensed", sans-serif;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    background-color: var(--background);
+}
+
+a{
+    text-decoration: none;
+    color: var(--black);
+}
+
+.description-text{
+    font-family: "Roboto Serif", serif;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    background-color: var(--white);
+    color: var(--black);
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 24px;
+}
+
+.btn{
+    padding: 6px 12px;
+    border-radius: 3px;
+    width: fit-content;
+}
+
+button{
+    border: none;
+}
+
+.btn-primary{
+    background-color: var(--primary-65);
+    color: var(--white);
+}
+
+.btn-secondary{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+.hero-banner{
+    background-color: var(--primary-65);
+    padding: 50px 0px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-banner-content{
+    background-color: rgba(249, 246, 243, 0.35);
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    align-items: center;
+    padding: 25px 75px 35px 75px;
+    border-radius: 3px;
+    backdrop-filter: blur(15px);
+    max-width: 750px;
+}
+
+.hero-banner-text, .hero-banner-title{
+    color: var(--white);
+    text-align: center;
+}
+
+.hero-banner-main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.content-page {
+    padding: 0px 240px;
+}
+
+.form-section{
+    padding: 32px 48px;
+    background-color: var(--white);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+}
+
+.form-section, .form {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+}
+
+.form-field{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+}
+
+.form-div{
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 24px;
+    border-radius: 3px;
+    border: 1px solid var(--secondary-65);
+}
+
+textarea, input, select{
+    border: 1px solid var(--gray-light);
+    color: var(--gray-dark);
+    background-color: var(--white);
+    padding: 8px 16px;
+}
+
+.description-textarea{
+    height: 230px;
+    padding: 16px;
+}
+
+.form-line{
+    display: flex;
+    flex-direction: row;
+    gap: 32px;
+}
+
+.content-page-btns{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    gap: 16px;
+}
+
+.job-card{
+    display: flex;
+    max-width: 500px;
+    width: 100%;
+    background-color: var(--white);
+    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+    flex-direction: column;
+    padding: 16px;
+    gap: 32px;
+    border-radius: 3px;
+}
+
+.job-card-main-content{
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.job-card-main-content p{
+    max-height: 60px;
+    text-overflow: ellipsis;
+    display: inline-block;
+    overflow: hidden;
+}
+
+
+.job-card-side-content{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.small{
+    font-size: 14px;
+    font-style: italic;
+}
+
+.list-skills{
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: row;
+    gap: 8px;
+}
+
+.skill{
+    background-color: var(--primary-30);
+    padding: 2px 8px;
+    border-radius: 3px;
+}
+
+.job-cards-section{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.full-page{
+    padding: 12px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}

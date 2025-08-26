@@ -1,13 +1,16 @@
 <%- include('../partials/head', {title:'Modifier une annonce'}) %>
 <%- include('../partials/header') %>
 
-<main>
-    <a href="/jobs">Annuler</a>
-    <section>
+<main class="content-page">
+    <div class="content-page-btns">
+        <a href="/jobs" class="btn btn-primary">Annuler</a>
+    </div>
+    <section class="form-section">
         <h2>Édition de l'annonce : <%= job.title %></h2>
-        <form action="/jobs" method="put">
+        <form action="/jobs" method="put" class="form">
             <%- include('../partials/passwordDiv') %>
             <%- include('../partials/formContent', job) %>
+            <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
         </form>
     </section>
 </main>

@@ -17,6 +17,8 @@ app.set("views", path.join(__dirname, "views"));
 
 app.use(Express.urlencoded({ extended: true }));
 
+app.use(Express.static("public"));
+
 app.use("/", router);
 
 app.listen(PORT, () => {

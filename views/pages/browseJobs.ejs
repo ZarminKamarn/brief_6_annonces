@@ -1,9 +1,9 @@
 <%- include('../partials/head', {title:'Les annonces'}) %>
 <%- include('../partials/header') %>
 
-<main>
+<main class="full-page">
     <h2><%= jobOffers.length %> missions disponibles</h2>
-    <section>
+    <section class="job-cards-section">
         <% jobOffers.forEach(jobOffer => { %>
             <%- include('../partials/jobCard', { job: jobOffer }) %>
         <% }) %>

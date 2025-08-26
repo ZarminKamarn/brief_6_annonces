@@ -2,7 +2,7 @@ export type JobOffer = {
     title: string,
     description: string,
     skills: Array<Skill>,
-    type: string,
+    type: JobTypes,
     startDate: Date,
     datePosted: Date,
     salary: number,
@@ -30,7 +30,7 @@ export type Skill =
     "MongoDB" |
     "PL/SQL" |
     "Git" |
-    "API Rest"
+    "API REST"
 ;
 
 export type SalaryUnit =
