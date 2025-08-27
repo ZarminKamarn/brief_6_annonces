@@ -1,10 +1,10 @@
-<a class="job-card">
+<a href="/jobs/<%= id %>" class="job-card">
     <div class="job-card-main-content">
         <h3><%= job.title %></h3>
         <p class="description-text"><%= job.description %></p>
     </div>
     <div class="job-card-side-content">
-        <ul class="list-skills">
+        <ul class="job-info-list">
             <% job.skills.forEach(skill => { %>
                 <li class="skill"><%= skill %></li>
             <% }) %>
@@ -12,7 +12,7 @@
         <% if(job.datePosted.toDateString() == (new Date()).toDateString()) { %>
             <p class="description-text small">Publié aujourd'hui</p>
         <% } else { %>
-            <p class="description-text small">job.datePosted.toDateString()</p>
+            <p class="description-text small"><%= job.datePosted.toLocaleString().split(" ")[0] %></p>
         <% } %>
     </div>
 </a>

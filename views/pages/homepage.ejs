@@ -1,7 +1,7 @@
 <%- include('../partials/head', {title:''}) %>
 <%- include('../partials/header') %>
 
-<main class="full-page">
+<main class="home-page">
     <section class="hero-banner">
         <div class="hero-banner-content">
             <div class="hero-banner-main-content">
@@ -14,8 +14,16 @@
             <a href="/jobs" class="btn btn-secondary">Découvrez les offres</a>
         </div>
     </section>
-    <section>
-
+    <section class="full-page">
+        <h2><%= jobOffers.length %> missions disponibles</h2>
+        <div class="job-cards-section">
+            <% jobOffers.forEach((jobOffer, index) => { %>
+                <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
+            <% }) %>
+        </div>
+        <div class="btn-browse">
+            <a href="/jobs" class="btn btn-primary">Consulter toutes les annonces</a>
+        </div>
     </section>
 </main>
 

@@ -7,14 +7,18 @@ class JobController extends Controller{
     }
 
     public displayJob(){
-        const id = this.request.params.id;
-        this.response.render("pages/readJob");
+        const id: number = parseInt(this.request.params.id);
+        if(jobOffers[id-1]){
+            this.response.render("pages/readJob", { job: jobOffers[id-1], id });
+            return;
+        }
+        this.response.send("404");
     }
 
     public displayEditJob(){
-        const id: number = parseInt(this.request.params.id) - 1;
-        if(jobOffers[id]){
-            this.response.render("pages/editJob", { job: jobOffers[id] });
+        const id: number = parseInt(this.request.params.id);
+        if(jobOffers[id-1]){
+            this.response.render("pages/editJob", { job: jobOffers[id-1], id });
             return;
         }
         this.response.send("404");
@@ -33,9 +37,9 @@ class JobController extends Controller{
     }
 
     public displayDeleteJob(){
-        const id: number = parseInt(this.request.params.id) - 1;
-        if(jobOffers[id]){
-            this.response.render("pages/deleteJob", { job: jobOffers[id] });
+        const id: number = parseInt(this.request.params.id);
+        if(jobOffers[id-1]){
+            this.response.render("pages/deleteJob", { job: jobOffers[id-1], id });
             return;
         }
         this.response.send("404");

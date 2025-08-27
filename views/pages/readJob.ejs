@@ -1,4 +1,29 @@
-<%- include('../partials/head', {title:'A voir'}) %>
+<%- include('../partials/head', {title: 'A voir'}) %>
 <%- include('../partials/header') %>
+
+<main class="content-page">
+    <section class="content-page-btns">
+        <a href="/jobs/edit/<%= id %>" class="btn btn-primary">Editer</a>
+        <a href="/jobs/delete/<%= id %>" class="btn btn-primary">Supprimer</a>
+    </section>
+    <section class="job-section">
+        <div class="job-header">
+            <h2><%= job.title %></h2>
+            <div class="all-job-info">
+                <ul class="job-info-list">
+                    <% job.skills.forEach(skill => { %>
+                        <li class="skill"><%= skill %></li>
+                    <% }) %>
+                </ul>
+                <div class="job-info-list">
+                    <p class="skill"><%= job.type %></p>
+                    <p class="skill"><%= job.salary %> <%= job.salaryUnit %></p>
+                </div>
+            </div>
+            <p><%= job.datePosted.toLocaleString().split(" ")[0] %></p>
+        </div>
+        <p class="description-text"><%= job.description %></p>
+    </section>
+</main>
 
 <%- include('../partials/footer') %>
