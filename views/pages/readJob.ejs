@@ -17,12 +17,16 @@
                 </ul>
                 <div class="job-info-list">
                     <p class="skill"><%= job.type %></p>
-                    <p class="skill"><%= job.salary %> <%= job.salaryUnit %></p>
+                    <p class="skill"><%= job.salary %> <%= job.salary_unit %></p>
                 </div>
             </div>
-            <p class="job-date"><%= job.datePosted.toLocaleString().split(" ")[0] %></p>
+            <p class="job-date"><%= job.start_date.toLocaleString().split(" ")[0] %></p>
         </div>
         <p class="job-description"><%= job.description %></p>
+        <div class="contact-us">
+            <a href="mailto:faux@mail.com" class="btn btn-primary">Nous écrire</a>
+            <a href="tel:+33123456789" class="btn btn-primary">Nous contacter</a>
+        </div>
     </section>
 </main>
 

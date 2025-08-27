@@ -7,7 +7,7 @@
     </div>
     <section class="form-section">
         <h2>Suppression de l'annonce : <%= job.title %></h2>
-        <form action="/jobs" method="delete" class="form">
+        <form action="/jobs/<%= id %>" method="delete" class="form">
             <%- include('../partials/passwordDiv') %>
             <button type="submit" class="btn btn-primary">Supprimer définitivement l'annonce</button>
 

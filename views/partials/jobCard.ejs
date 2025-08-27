@@ -6,13 +6,11 @@
     <div class="job-card-side-content">
         <ul class="job-info-list">
             <% for(let i = 0; i < 3; i++) { %>
+                <% if (!job.skills[i]) {
+                    break;
+                } %>
                 <li class="skill"><%= job.skills[i] %></li>
             <% } %>
         </ul>
-        <% if(job.datePosted.toDateString() == (new Date()).toDateString()) { %>
-            <p class="small">Publié aujourd'hui</p>
-        <% } else { %>
-            <p class="small"><%= job.datePosted.toLocaleString().split(" ")[0] %></p>
-        <% } %>
     </div>
 </a>

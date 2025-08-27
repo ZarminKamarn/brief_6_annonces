@@ -23,7 +23,7 @@ jobRouter.get("/add", (request, response) => {
     controller.displayAddJob();
 });
 
-jobRouter.post("/add", (request, response) => {
+jobRouter.post("/", (request, response) => {
     const controller: JobController = new JobController(request, response);
     controller.addJob();
 });

@@ -10,7 +10,10 @@
     <div class="form-field">
         <label for="skills">Compétence(s) Recherchée(s)</label>
         <select name="skills" id="skills">
-            <option>Sélectionner les compétences</option>
+            <option>Sélectionnez les compétences</option>
+            <% skill.forEach(aSkill => { %>
+                <option><%= aSkill %></option>
+            <% }) %>
         </select>
     </div>
 </div>
@@ -20,14 +23,17 @@
             <label for="type">Type de contrat</label>
             <select name="type" id="type">
                 <option>Freelance, CDI, ...</option>
+                <% jobTypes.forEach(type => { %>
+                    <option><%= type %></option>
+                <% }) %>
             </select>
         </div>
         <div class="form-field">
             <label for="startDate">Date onboarding</label>
             <% if (job) { %>
-                <input type="date" name="start-date" id="startDate" placeholder="jj/mm/aaaa" value="<%= job.startDate.toISOString().split('T')[0] %>">
+                <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa" value="<%= job.start_date.toISOString().split('T')[0] %>">
             <% } else { %>
-                <input type="date" name="start-date" id="startDate" placeholder="jj/mm/aaaa">
+                <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa">
             <% } %>
         </div>
     </div>
@@ -38,8 +44,10 @@
         </div>
         <div class="form-field">
             <label for="salaryUnit">Unité de salaire</label>
-            <select name="salary-unit" id="salaryUnit">
-                
+            <select name="salary_unit" id="salaryUnit">
+                <% salaryUnit.forEach(unit => { %>
+                    <option><%= unit %></option>
+                <% }) %>
             </select>
         </div>
     </div>

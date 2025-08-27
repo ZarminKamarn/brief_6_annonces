@@ -9,7 +9,7 @@
         <h2>Édition de l'annonce : <%= job.title %></h2>
         <form action="/jobs" method="put" class="form">
             <%- include('../partials/passwordDiv') %>
-            <%- include('../partials/formContent', job) %>
+            <%- include('../partials/formContent', { job, skill, jobTypes, salaryUnit }) %>
             <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
         </form>
     </section>

@@ -325,6 +325,13 @@ textarea, input, select{
     padding: 0px;
 }
 
+.contact-us{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 16px;
+}
+
 @media screen and (max-width: 768px) {
     .content-page{
         padding: 12px 24px;
