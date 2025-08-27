@@ -4,7 +4,7 @@ export const jobOffers: Array<JobOffer> = [
     {
         title: "Mon Boulot",
         description: "Lorem ipsum",
-        skills: ["HTML", "CSS", "React"],
+        skills: ["HTML", "CSS", "React", "JavaScript", "TypeScript", "PostgreSQL"],
         type: "CDI",
         startDate: new Date(),
         datePosted: new Date(),
