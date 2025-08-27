@@ -21,7 +21,7 @@ class JobController extends Controller{
     public displayEditJob(){
         const id: number = parseInt(this.request.params.id);
         if(jobOffers[id-1]){
-            this.response.render("pages/editJob", { job: jobOffers[id-1], id, skill, jobTypes, salaryUnit });
+            this.response.render("pages/editJob", { job: jobOffers[id-1], id, errors: "", skill, jobTypes, salaryUnit });
             return;
         }
         this.response.send("404");
@@ -32,11 +32,12 @@ class JobController extends Controller{
     }
 
     public displayAddJob(){
-        this.response.render("pages/addJob", {skill, jobTypes, salaryUnit});
+        this.response.render("pages/addJob", {job: "", errors: "", skill, jobTypes, salaryUnit});
     }
 
     public addJob(){
-        const result = addFormSchema.safeParse(this.request.body)
+        const result = addFormSchema.safeParse(this.request.body);
+        this.request.body.skills = (this.request.body.skills as string).split(",");
 
         if (!result.success) {
         // 3.1 Gestion des erreurs du formulaire
@@ -44,8 +45,9 @@ class JobController extends Controller{
 
         // 3.2 Afficher le formulaire avec : erreurs + values
             return this.response.status(400).render("pages/addJob", {
+                job: this.request.body,
                 errors: errors.properties,
-                values: this.request.body
+                skill, jobTypes, salaryUnit
             })
         }
 
@@ -55,7 +57,7 @@ class JobController extends Controller{
             id: dataVariables.id,
             title: this.request.body.title,
             description: this.request.body.description,
-            skills: (this.request.body.skills as string).split(",") as Array<Skill>,
+            skills: this.request.body.skills,
             type: this.request.body.type,
             start_date: this.request.body.start_date,
             salary: this.request.body.salary,

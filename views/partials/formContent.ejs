@@ -24,13 +24,17 @@
             <select name="type" id="type">
                 <option>Freelance, CDI, ...</option>
                 <% jobTypes.forEach(type => { %>
-                    <option><%= type %></option>
+                    <option 
+                        <% if (type === job?.type) { %>
+                            selected
+                        <% } %>
+                    ><%= type %></option>
                 <% }) %>
             </select>
         </div>
         <div class="form-field">
             <label for="startDate">Date onboarding</label>
-            <% if (job) { %>
+            <% if (job?.start_date) { %>
                 <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa" value="<%= job.start_date.toISOString().split('T')[0] %>">
             <% } else { %>
                 <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa">
