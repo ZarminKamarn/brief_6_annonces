@@ -13,9 +13,9 @@ jobRouter.get("/edit/:id", (request, response) => {
     controller.displayEditJob();
 });
 
-jobRouter.put("/edit/:id", (request, response) => {
+jobRouter.post("/edit/:id", (request, response) => {
     const controller: JobController = new JobController(request, response);
-    controller.displayEditJob();
+    controller.editJob();
 });
 
 jobRouter.get("/add", (request, response) => {
@@ -33,7 +33,7 @@ jobRouter.get("/delete/:id", (request, response) => {
     controller.displayDeleteJob();
 });
 
-jobRouter.put("/delete/:id", (request, response) => {
+jobRouter.post("/delete/:id", (request, response) => {
     const controller: JobController = new JobController(request, response);
     controller.deleteJob();
 });

@@ -9,7 +9,7 @@
         <h2>Création d'une annonce</h2>
         <form action="/jobs" method="post" class="form">
             <%- include('../partials/formContent', { job, errors, skill, jobTypes, salaryUnit }) %>
-            <%- include('../partials/passwordDiv') %>
+            <%- include('../partials/passwordDiv', { errors }) %>
             <button type="submit" class="btn btn-primary">Créer l'annonce</button>
         </form>
     </section>

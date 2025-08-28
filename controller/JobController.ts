@@ -1,7 +1,7 @@
 import z from "zod";
 import { dataVariables, jobOffers } from "../data/data";
 import Controller from "../libs/Controller";
-import { addFormSchema } from "../libs/validators/formSchema";
+import { addFormSchema, deleteFormSchema, isPasswordCorrect } from "../libs/validators/formSchema";
 import { JobOffer, jobTypes, salaryUnit, Skill, skill } from "../data/types";
 
 class JobController extends Controller{
@@ -11,20 +11,26 @@ class JobController extends Controller{
 
     public displayJob(){
         const id: number = parseInt(this.request.params.id);
-        if(jobOffers[id-1]){
-            this.response.render("pages/readJob", { job: jobOffers[id-1], id });
+        const job: JobOffer | undefined = jobOffers.find((job) => {
+            return job.id === id;
+        })
+        if(job){
+            this.response.render("pages/readJob", { job, id });
             return;
         }
-        this.response.send("404");
+        this.response.status(404).render("errors/404");
     }
 
     public displayEditJob(){
         const id: number = parseInt(this.request.params.id);
-        if(jobOffers[id-1]){
-            this.response.render("pages/editJob", { job: jobOffers[id-1], id, errors: "", skill, jobTypes, salaryUnit });
+        const job: JobOffer | undefined = jobOffers.find((job) => {
+            return job.id === id;
+        })
+        if(job){
+            this.response.render("pages/editJob", { job, id, errors: "", skill, jobTypes, salaryUnit });
             return;
         }
-        this.response.send("404");
+        this.response.status(404).render("errors/404");
     }
 
     public editJob(){
@@ -71,15 +77,50 @@ class JobController extends Controller{
 
     public displayDeleteJob(){
         const id: number = parseInt(this.request.params.id);
-        if(jobOffers[id-1]){
-            this.response.render("pages/deleteJob", { job: jobOffers[id-1], id });
+        const job: JobOffer | undefined = jobOffers.find((job) => {
+            return job.id === id;
+        })
+        if(job){
+            this.response.render("pages/deleteJob", { job, id, errors: "" });
             return;
         }
-        this.response.send("404");
+        this.response.status(404).render("errors/404");
     }
 
     public deleteJob(){
-        this.response.redirect("/");
+        const result = deleteFormSchema.safeParse(this.request.body);
+        const id: number = parseInt(this.request.params.id);
+        const job: JobOffer | undefined = jobOffers.find((job) => {
+            return job.id === id;
+        });
+
+        if (!result.success) {
+        // 3.1 Gestion des erreurs du formulaire
+            const errors = z.treeifyError(result.error);
+
+        // 3.2 Afficher le formulaire avec : erreurs + values
+            return this.response.status(400).render("pages/deleteJob", {
+                job,
+                id,
+                errors: errors.properties,
+                skill, jobTypes, salaryUnit
+            })
+        }
+        else if (!isPasswordCorrect(id, this.request.body.password)){
+            return this.response.status(400).render("pages/deleteJob", {
+                job,
+                id,
+                errors: {password: {errors: ["Le mot de passe est invalide"]}},
+                skill, jobTypes, salaryUnit
+            })
+        }
+        
+        const index = jobOffers.findIndex((jobOffer) => jobOffer.id === id);
+        if (index !== -1) {
+            jobOffers.splice(index, 1);
+        }
+
+        this.response.redirect("/jobs?success=true");
     }
 }
 

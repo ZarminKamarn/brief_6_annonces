@@ -7,8 +7,8 @@
     </section>
     <section class="form-section">
         <h2>Édition de l'annonce : <%= job.title %></h2>
-        <form action="/jobs" method="put" class="form">
-            <%- include('../partials/passwordDiv') %>
+        <form action="/jobs/edit/<%= id %>" method="post" class="form">
+            <%- include('../partials/passwordDiv', { errors }) %>
             <%- include('../partials/formContent', { job, errors, skill, jobTypes, salaryUnit }) %>
             <button type="submit" class="btn btn-primary">Sauvegarder les modifications</button>
         </form>

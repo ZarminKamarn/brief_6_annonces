@@ -243,11 +243,12 @@ textarea, input, select{
     justify-content: space-between;
 }
 
-.small{
+.error-msg{
     font-size: 14px;
-    font-style: italic;
     font-family: "Roboto Serif", serif;
+    color: #f44336;
 }
+
 
 .job-info-list{
     list-style: none;

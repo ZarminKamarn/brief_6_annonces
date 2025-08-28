@@ -2,10 +2,20 @@
     <div class="form-field">
         <label for="title">Titre de l'annonce</label>
         <input type="text" name="title" id="title" placeholder="Recherche talent junior" value="<%= job?.title || '' %>">
+        <% if (errors?.title?.errors?.[0]) { %>
+            <small id="title-error" class="error-msg">
+            <%= errors.title.errors[0] %>
+            </small>
+        <% } %>
     </div>
     <div class="form-field">
         <label for="description">Description de l'offre</label>
         <textarea name="description" id="description" placeholder="..." class="description-textarea"><%= job?.description || '' %></textarea>
+        <% if (errors?.description?.errors?.[0]) { %>
+            <small id="description-error" class="error-msg">
+            <%= errors.description.errors[0] %>
+            </small>
+        <% } %>
     </div>
     <div class="form-field">
         <label for="skills">Compétence(s) Recherchée(s)</label>
@@ -15,6 +25,11 @@
                 <option><%= aSkill %></option>
             <% }) %>
         </select>
+        <% if (errors?.skills?.errors?.[0]) { %>
+            <small id="skills-error" class="error-msg">
+            <%= errors.skills.errors[0] %>
+            </small>
+        <% } %>
     </div>
 </div>
 <div class="form-div">
@@ -31,13 +46,20 @@
                     ><%= type %></option>
                 <% }) %>
             </select>
+            <% if (errors?.type?.errors?.[0]) { %>
+                <small id="type-error" class="error-msg">
+                <%= errors.type.errors[0] %>
+                </small>
+            <% } %>
         </div>
         <div class="form-field">
             <label for="startDate">Date onboarding</label>
-            <% if (job?.start_date) { %>
-                <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa" value="<%= job.start_date.toISOString().split('T')[0] %>">
-            <% } else { %>
+            
                 <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa">
+            <% if (errors?.start_date?.errors?.[0]) { %>
+                <small id="start-date-error" class="error-msg">
+                <%= errors.start_date.errors[0] %>
+                </small>
             <% } %>
         </div>
     </div>
@@ -45,14 +67,28 @@
         <div class="form-field">
             <label for="salary">Salaire</label>
             <input type="text" name="salary" id="salary" placeholder="... €" value="<%= job?.salary?.toString() || '' %>">
+            <% if (errors?.salary?.errors?.[0]) { %>
+                <small id="salary-error" class="error-msg">
+                <%= errors.salary.errors[0] %>
+                </small>
+            <% } %>
         </div>
         <div class="form-field">
             <label for="salaryUnit">Unité de salaire</label>
             <select name="salary_unit" id="salaryUnit">
                 <% salaryUnit.forEach(unit => { %>
-                    <option><%= unit %></option>
+                    <option 
+                        <% if (unit === job?.salary_unit) { %>
+                            selected
+                        <% } %>
+                    ><%= unit %></option>
                 <% }) %>
             </select>
+            <% if (errors?.salary_unit?.errors?.[0]) { %>
+                <small id="salary-unit-error" class="error-msg">
+                <%= errors.salary_unit.errors[0] %>
+                </small>
+            <% } %>
         </div>
     </div>
 </div>
