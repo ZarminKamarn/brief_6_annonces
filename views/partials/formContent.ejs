@@ -19,12 +19,13 @@
     </div>
     <div class="form-field">
         <label for="skills">Compétence(s) Recherchée(s)</label>
-        <select name="skills" id="skills">
+        <select id="skills">
             <option>Sélectionnez les compétences</option>
             <% skill.forEach(aSkill => { %>
                 <option><%= aSkill %></option>
             <% }) %>
         </select>
+        <input name="skills" class="readonly-input" id="list-skills" value="<%= job?.skills?.toString() || '' %>" readonly>
         <% if (errors?.skills?.errors?.[0]) { %>
             <small id="skills-error" class="error-msg">
             <%= errors.skills.errors[0] %>

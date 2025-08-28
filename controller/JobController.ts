@@ -34,7 +34,46 @@ class JobController extends Controller{
     }
 
     public editJob(){
-        this.response.redirect("/");
+        const result = addFormSchema.safeParse(this.request.body);
+        this.request.body.skills = (this.request.body.skills as string).split(",");
+
+        const id: number = parseInt(this.request.params.id);
+        const job: JobOffer | undefined = jobOffers.find((job) => {
+            return job.id === id;
+        });
+
+        if (!result.success) {
+        // 3.1 Gestion des erreurs du formulaire
+            const errors = z.treeifyError(result.error);
+
+        // 3.2 Afficher le formulaire avec : erreurs + values
+            return this.response.status(400).render("pages/editJob", {
+                job: this.request.body,
+                id,
+                errors: errors.properties,
+                skill, jobTypes, salaryUnit
+            })
+        }
+        else if (!isPasswordCorrect(id, this.request.body.password)){
+            return this.response.status(400).render("pages/editJob", {
+                job: this.request.body,
+                id,
+                errors: {password: {errors: ["Le mot de passe est invalide"]}},
+                skill, jobTypes, salaryUnit
+            })
+        }
+        
+        if(job){
+            job.title = this.request.body.title;
+            job.description = this.request.body.description;
+            job.skills = this.request.body.skills;
+            job.type = this.request.body.type;
+            job.start_date = this.request.body.start_date;
+            job.salary = this.request.body.salary;
+            job.salary_unit = this.request.body.salary_unit;
+        }
+
+        this.response.redirect(`/jobs/${id}?success=true`);
     }
 
     public displayAddJob(){

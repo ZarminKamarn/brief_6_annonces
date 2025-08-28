@@ -4,7 +4,7 @@ import terser from "@rollup/plugin-terser";
 const isProduction = process.env.NODE_ENV === "production";
 
 export default {
-  input: "src/ts/navBarButton.ts",
+  input:  ["src/ts/skillSelection.ts"],
   output: [
     {
       dir: "public/js/",
