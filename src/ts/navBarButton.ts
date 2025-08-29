@@ -9,7 +9,7 @@ window.addEventListener("resize", screenIsResized);
 
 function screenIsResized() {
   if (navBar) {
-    if (screen.width > 768) {
+    if (screen.width > 992) {
       navBar.style.display = "flex";
     } else {
       navBar.style.display = "none";
