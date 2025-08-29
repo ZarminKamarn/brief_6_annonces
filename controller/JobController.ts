@@ -48,6 +48,9 @@ class JobController extends Controller {
   public editJob() {
     const result = addFormSchema.safeParse(this.request.body);
     this.request.body.skills = (this.request.body.skills as string).split(",");
+    if (this.request.body.start_date !== "") {
+      this.request.body.start_date = new Date(this.request.body.start_date);
+    }
 
     const id: number = parseInt(this.request.params.id);
     const job: JobOffer | undefined = jobOffers.find((job) => {
