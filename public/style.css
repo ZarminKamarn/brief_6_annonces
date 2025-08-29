@@ -226,7 +226,7 @@ select {
 }
 
 .job-card-item{
-  max-width: 600px;
+  max-width: 480px;
   width: 100%;
   background-color: var(--white);
   box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
@@ -280,6 +280,7 @@ select {
   justify-content: space-between;
   gap: 40px;
   list-style: none;
+  padding: 0;
 }
 
 .full-page {
