@@ -20,7 +20,6 @@ export const skill =  [
     "PHP",
     "Symphony",
     "C",
-    "C++",
     "C#",
     ".Net",
     "Java",

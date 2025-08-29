@@ -34,8 +34,19 @@ export const jobOffers: Array<JobOffer> = [
         salary_unit: "Brut mensuel",
         password: "azerty"
     },
+    {
+        id: 4,
+        title: "Stagiaire",
+        description: "Nous cherchons un stagiaire pour une péridode de 5 mois. Si vous êtes en formation actuellement, n'hésitez pas à postuler",
+        skills: ["Faire le café"],
+        type: "Stage",
+        start_date: new Date("11-17-2025"),
+        salary: 0,
+        salary_unit: "Brut horaire",
+        password: "password"
+    },
 ];
 
 export const dataVariables = {
-    id: 3
+    id: 4
 }

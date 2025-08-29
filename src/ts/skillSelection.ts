@@ -9,11 +9,20 @@ function skillIsSelected (){
     if(skillList instanceof HTMLInputElement && skillSelector instanceof HTMLSelectElement){
         const skill: string = skillSelector.value;
         if(skill !== "Sélectionnez les compétences"){
-            if(skillList.value === ""){
-                skillList.value = skill;
+            if(skillList.value.split(",").includes(skill)){
+                const regex: RegExp = new RegExp(`^(.+,)?${skill}(,.+)?$`);
+                skillList.value = skillList.value.replace(regex, "$1$2");
+                skillList.value = skillList.value.replace(/,$/, "");
+                skillList.value = skillList.value.replace(/,,/, ",");
+                skillList.value = skillList.value.replace(/^,/, "");
             }
             else{
-                skillList.value = `${skillList.value},${skill}`
+                if(skillList.value === ""){
+                    skillList.value = skill;
+                }
+                else{
+                    skillList.value = `${skillList.value},${skill}`
+                }
             }
         }
     }
