@@ -20,13 +20,14 @@
     </div>
   </section>
   <section class="full-page">
-    <h2><%= jobOffers.length %> missions disponibles</h2>
+    <h2>Les dernières annonces</h2>
     <ul class="job-cards-section">
-      <li>
-      <% jobOffers.forEach((jobOffer, index) => { %>
-        <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
-      <% }) %>
-      </li>
+      <% for(let i = 0; i < 3; i++) { %>
+        <% if(!jobOffers[i]) { break; } %>
+        <li class="job-card-item">
+          <%- include('../partials/jobCard', { job: jobOffers[i], id: jobOffers[i].id }) %>
+        </li>
+      <% } %>
     </ul>
     <div class="btn-browse">
       <a href="/jobs" class="btn btn-primary">Consulter toutes les annonces</a>

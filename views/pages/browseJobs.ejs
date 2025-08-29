@@ -5,11 +5,11 @@
   <section class="full-page">
     <h2><%= jobOffers.length %> missions disponibles</h2>
     <ul class="job-cards-section">
-      <li>
-        <% jobOffers.forEach((jobOffer, index) => { %>
-          <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
-        <% }) %>
-      </li>
+      <% jobOffers.forEach(jobOffer => { %>
+        <li class="job-card-item">
+          <%- include('../partials/jobCard', { job: jobOffer, id: jobOffer.id }) %>
+        </li>
+      <% }) %>
     </ul>
   </section>
 </main>
