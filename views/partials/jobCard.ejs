@@ -1,16 +1,14 @@
 <a href="/jobs/<%= id %>" class="job-card">
-    <div class="job-card-main-content">
-        <h3><%= job.title %></h3>
-        <p class="card-description"><%= job.description %></p>
-    </div>
-    <div class="job-card-side-content">
-        <ul class="job-info-list">
-            <% for(let i = 0; i < 3; i++) { %>
-                <% if (!job.skills[i]) {
-                    break;
-                } %>
-                <li class="skill"><%= job.skills[i] %></li>
-            <% } %>
-        </ul>
-    </div>
+  <div class="job-card-main-content">
+    <h3><%= job.title %></h3>
+    <p class="card-description"><%= job.description %></p>
+  </div>
+  <div class="job-card-side-content">
+    <ul class="job-info-list">
+      <% for(let i = 0; i < 3; i++) { %>
+        <% if (!job.skills[i]) { break; } %>
+        <li class="skill"><%= job.skills[i] %></li>
+      <% } %>
+    </ul>
+  </div>
 </a>

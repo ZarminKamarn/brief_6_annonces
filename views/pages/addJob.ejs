@@ -2,18 +2,19 @@
 <%- include('../partials/header') %>
 
 <main class="content-page">
-    <section class="content-page-btns">
-        <a href="/jobs" class="btn btn-primary">Annuler</a>
-    </section>
-    <section class="form-section">
-        <h2>Création d'une annonce</h2>
-        <form action="/jobs" method="post" class="form">
-            <%- include('../partials/formContent', { job, errors, skill, jobTypes, salaryUnit }) %>
-            <%- include('../partials/passwordDiv', { errors }) %>
-            <button type="submit" class="btn btn-primary">Créer l'annonce</button>
-        </form>
-    </section>
-    
+  <section class="content-page-btns">
+    <a href="/jobs" class="btn btn-primary">Annuler</a>
+  </section>
+  <section class="form-section">
+    <h2>Création d'une annonce</h2>
+    <form action="/jobs" method="post" class="form">
+      <%- include('../partials/formContent',
+        { job, errors, skill, jobTypes, salaryUnit }) %>
+      <%- include('../partials/passwordDiv', { errors }) %>
+      <button type="submit" class="btn btn-primary">Créer l'annonce</button>
+    </form>
+  </section>
 </main>
 <script type="module" src="/js/skillSelection.js"></script>
+
 <%- include('../partials/footer') %>

@@ -21,8 +21,8 @@ app.use(Express.static("public"));
 
 app.use("/", router);
 
-app.use(function(req,res){
-    res.status(404).render('errors/404');
+app.use(function (req, res) {
+  res.status(404).render("errors/404");
 });
 
 app.listen(PORT, () => {

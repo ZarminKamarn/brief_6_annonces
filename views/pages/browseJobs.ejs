@@ -2,14 +2,16 @@
 <%- include('../partials/header') %>
 
 <main>
-    <section class="full-page">
-        <h2><%= jobOffers.length %> missions disponibles</h2>
-        <div class="job-cards-section">
-            <% jobOffers.forEach((jobOffer, index) => { %>
-                <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
-            <% }) %>
-        </div>
-    </section>
+  <section class="full-page">
+    <h2><%= jobOffers.length %> missions disponibles</h2>
+    <ul class="job-cards-section">
+      <li>
+        <% jobOffers.forEach((jobOffer, index) => { %>
+          <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
+        <% }) %>
+      </li>
+    </ul>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

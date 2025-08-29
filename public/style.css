@@ -1,389 +1,394 @@
-:root{
-    --primary-100 : #154D71;
-    --primary-65 : rgba(21, 77, 113, 0.65);
-    --primary-30 : rgba(21, 77, 113, 0.3);
+:root {
+  --primary-100: #154d71;
+  --primary-65: rgba(21, 77, 113, 0.65);
+  --primary-30: rgba(21, 77, 113, 0.3);
 
-    --secondary-100 : #CFAB8D;
-    --secondary-65 : rgba(207, 171, 141, 0.65);
-    --secondary-30 : rgba(207, 171, 141, 0.3);
+  --secondary-100: #cfab8d;
+  --secondary-65: rgba(207, 171, 141, 0.65);
+  --secondary-30: rgba(207, 171, 141, 0.3);
 
-    --black : #0F0E0E;
-    --white : #FDFDFD;
-    --background : #F9F6F3;
-    --gray-dark : #4C4C4C;
-    --gray-light : #DADAD7;
+  --black: #0f0e0e;
+  --white: #fdfdfd;
+  --background: #f9f6f3;
+  --gray-dark: #4c4c4c;
+  --gray-light: #dadad7;
 }
 
-*{
-    margin: 0;
-    box-sizing: border-box;
+* {
+  margin: 0;
+  box-sizing: border-box;
 }
 
-body{
-    font-family: "Roboto Condensed", sans-serif;
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    background-color: var(--background);
+body {
+  font-family: "Roboto Condensed", sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  background-color: var(--background);
 }
 
-a{
-    text-decoration: none;
-    color: var(--black);
-    font-size: 18px;
+a {
+  text-decoration: none;
+  color: var(--black);
+  font-size: 18px;
 }
 
-h1{
-    font-size: 24px;
-    font-weight: 500;
+h1 {
+  font-size: 24px;
+  font-weight: 500;
 }
 
-h2{
-    font-size: 24px;
-    font-weight: 700;
+h2 {
+  font-size: 24px;
+  font-weight: 700;
 }
 
-h3{
-    font-size: 20px;
-    font-weight: 700;
+h3 {
+  font-size: 20px;
+  font-weight: 700;
 }
 
-.card-description{
-    font-family: "Roboto Serif", serif;
-    font-size: 16px;
+.card-description {
+  font-family: "Roboto Serif", serif;
+  font-size: 16px;
 }
 
-.job-description{
-    font-family: "Roboto Serif", serif;
-    font-size: 18px;
+.job-description {
+  font-family: "Roboto Serif", serif;
+  font-size: 18px;
 }
 
-.header{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 12px 24px;
-    background-color: var(--white);
-    color: var(--black);
-    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
-    position: sticky;
-    top: 0px;
-    z-index: 1;
+.header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 12px 24px;
+  background-color: var(--white);
+  color: var(--black);
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0px;
+  z-index: 1;
 }
 
-.header-mobile{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    width: auto;
+.header-mobile {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: auto;
 }
 
-.nav-bar{
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    gap: 24px;
+.nav-bar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 24px;
 }
 
-.btn{
-    padding: 6px 12px;
-    border-radius: 3px;
-    width: fit-content;
-    font-size: 18px;
-    font-weight: 500;
-    text-align: center;
-    cursor: pointer;
+.btn {
+  padding: 6px 12px;
+  border-radius: 3px;
+  width: fit-content;
+  font-size: 18px;
+  font-weight: 500;
+  text-align: center;
+  cursor: pointer;
 }
 
-button{
-    border: none;
+button {
+  border: none;
 }
 
-.btn-primary{
-    background-color: var(--primary-65);
-    color: var(--white);
+.btn-primary {
+  background-color: var(--primary-65);
+  color: var(--white);
 }
 
-.btn-secondary{
-    background-color: var(--white);
-    color: var(--black);
+.btn-secondary {
+  background-color: var(--white);
+  color: var(--black);
 }
 
-.hero-banner{
-    background-color: var(--primary-65);
-    padding: 50px 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.hero-banner {
+  background-color: var(--primary-65);
+  padding: 50px 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.hero-banner-content{
-    background-color: rgba(249, 246, 243, 0.35);
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    align-items: center;
-    padding: 25px 75px 35px 75px;
-    border-radius: 3px;
-    backdrop-filter: blur(15px);
-    max-width: 750px;
+.hero-banner-content {
+  background-color: rgba(249, 246, 243, 0.35);
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  align-items: center;
+  padding: 25px 75px 35px 75px;
+  border-radius: 3px;
+  backdrop-filter: blur(15px);
+  max-width: 750px;
 }
 
-.hero-banner-text, .hero-banner-title{
-    color: var(--white);
-    text-align: center;
+.hero-banner-text,
+.hero-banner-title {
+  color: var(--white);
+  text-align: center;
 }
 
-.hero-banner-title{
-    font-size: 32px;
-    font-weight: 700;
+.hero-banner-title {
+  font-size: 32px;
+  font-weight: 700;
 }
 
-.hero-banner-text{
-    font-size: 21px;
-    font-weight: 500;
+.hero-banner-text {
+  font-size: 21px;
+  font-weight: 500;
 }
 
-.hero-banner-main-content{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.hero-banner-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
 .content-page {
-    padding: 0px 240px;
+  padding: 0px 240px;
 }
 
-.form-section{
-    padding: 32px 48px;
-    background-color: var(--white);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
-    border-radius: 3px;
+.form-section {
+  padding: 32px 48px;
+  background-color: var(--white);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  border-radius: 3px;
 }
 
-.form-section, .form {
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
+.form-section,
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
-.form-field{
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-    width: 100%;
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 100%;
 }
 
-.form-div{
-    display: flex;
-    flex-direction: column;
-    gap: 32px;
-    padding: 24px;
-    border-radius: 3px;
-    border: 1px solid var(--secondary-65);
+.form-div {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  padding: 24px;
+  border-radius: 3px;
+  border: 1px solid var(--secondary-65);
 }
 
-textarea, input, select{
-    border: 1px solid var(--gray-light);
-    color: var(--gray-dark);
-    background-color: var(--white);
-    padding: 8px 16px;
+textarea,
+input,
+select {
+  border: 1px solid var(--gray-light);
+  color: var(--gray-dark);
+  background-color: var(--white);
+  padding: 8px 16px;
 }
 
-.description-textarea{
-    height: 230px;
-    padding: 16px;
+.description-textarea {
+  height: 230px;
+  padding: 16px;
 }
 
-.form-line{
-    display: flex;
-    flex-direction: row;
-    gap: 32px;
-    flex-wrap: wrap;
+.form-line {
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+  flex-wrap: wrap;
 }
 
-.content-page-btns{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    margin-bottom: 10px;
-    gap: 16px;
+.content-page-btns {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-bottom: 10px;
+  gap: 16px;
 }
 
-.job-card{
-    display: flex;
-    max-width: 600px;
-    width: 100%;
-    background-color: var(--white);
-    box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
-    flex-direction: column;
-    padding: 16px;
-    gap: 32px;
-    border-radius: 3px;
+.job-card {
+  display: flex;
+  max-width: 600px;
+  width: 100%;
+  background-color: var(--white);
+  box-shadow: 4px 4px 15px rgba(0, 0, 0, 0.15);
+  flex-direction: column;
+  padding: 16px;
+  gap: 32px;
+  border-radius: 3px;
 }
 
-.job-card-main-content{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.job-card-main-content {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.job-card-main-content p{
-    max-height: 58px;
-    text-overflow: ellipsis;
-    display: inline-block;
-    overflow: hidden;
+.job-card-main-content p {
+  max-height: 58px;
+  text-overflow: ellipsis;
+  display: inline-block;
+  overflow: hidden;
 }
 
-.job-card-side-content{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
+.job-card-side-content {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 
-.error-msg{
-    font-size: 14px;
-    font-family: "Roboto Serif", serif;
-    color: #f44336;
+.error-msg {
+  font-size: 14px;
+  font-family: "Roboto Serif", serif;
+  color: #f44336;
 }
 
-
-.job-info-list{
-    list-style: none;
-    padding: 0;
-    display: flex;
-    flex-direction: row;
-    gap: 8px;
+.job-info-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
 }
 
-.skill{
-    background-color: var(--primary-30);
-    padding: 2px 8px;
-    border-radius: 3px;
-    width: fit-content;
-    font-size: 16px;
+.skill {
+  background-color: var(--primary-30);
+  padding: 2px 8px;
+  border-radius: 3px;
+  width: fit-content;
+  font-size: 16px;
 }
 
-.job-cards-section{
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 40px;
+.job-cards-section {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 40px;
 }
 
-.full-page{
-    padding: 12px 24px;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
+.full-page {
+  padding: 12px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 }
 
-.job-section{
-    display: flex;
-    flex-direction: column;
-    padding: 32px 48px;
-    gap: 32px;
-    border-radius: 3px;
-    background-color: var(--white);
+.job-section {
+  display: flex;
+  flex-direction: column;
+  padding: 32px 48px;
+  gap: 32px;
+  border-radius: 3px;
+  background-color: var(--white);
 }
 
-.job-header{
-    display: flex;
-    flex-direction: column;
-    gap: 16px;
+.job-header {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
 }
 
-.all-job-info{
-    display: flex;
-    flex-direction: row;
-    gap: 24px;
-    flex-wrap: wrap;
+.all-job-info {
+  display: flex;
+  flex-direction: row;
+  gap: 24px;
+  flex-wrap: wrap;
 }
 
-.home-page{
-    display: flex;
-    flex-direction: column;
-    gap: 60px;
-    margin-top: -60px;
+.home-page {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  margin-top: -60px;
 }
 
-.btn-browse{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+.btn-browse {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
 }
 
-.job-date, label, .password-text{
-    font-size: 18px;
+.job-date,
+label,
+.password-text {
+  font-size: 18px;
 }
 
-.nav-bar-button{
-    display: none;
-    background: transparent;
-    padding: 0px;
+.nav-bar-button {
+  display: none;
+  background: transparent;
+  padding: 0px;
 }
 
-.contact-us{
-    display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
-    gap: 16px;
+.contact-us {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  gap: 16px;
 }
 
-.readonly-input{
-    background: transparent;
-    border: none;
-    cursor: default;
+.readonly-input {
+  background: transparent;
+  border: none;
+  cursor: default;
 }
 
-.readonly-input:focus{
-    outline: none;
+.readonly-input:focus {
+  outline: none;
 }
 
 @media screen and (max-width: 768px) {
-    .content-page{
-        padding: 12px 24px;
-    }
+  .content-page {
+    padding: 12px 24px;
+  }
 
-    .job-card-side-content{
-        flex-direction: column;
-        gap: 10px;
-        align-items: end;
-    }
+  .job-card-side-content {
+    flex-direction: column;
+    gap: 10px;
+    align-items: end;
+  }
 
-    .all-job-info .job-info-list{
-        flex-direction: column;
-    }
+  .all-job-info .job-info-list {
+    flex-direction: column;
+  }
 
-    .all-job-info{
-        flex-direction: column;
-    }
+  .all-job-info {
+    flex-direction: column;
+  }
 
-    .form-section{
-        padding: 32px 16px;
-    }
+  .form-section {
+    padding: 32px 16px;
+  }
 
-    .nav-bar-button{
-        display: inline-block;
-    }
+  .nav-bar-button {
+    display: inline-block;
+  }
 
-    .nav-bar{
-        display: none;
-    }
+  .nav-bar {
+    display: none;
+  }
 
-    .nav-bar{
-        flex-direction: column;
-    }
+  .nav-bar {
+    flex-direction: column;
+  }
 
-    .header{
-        flex-direction: column;
-    }
+  .header {
+    flex-direction: column;
+  }
 
-    .header-mobile{
-        width: 100%;
-    }
+  .header-mobile {
+    width: 100%;
+  }
 }

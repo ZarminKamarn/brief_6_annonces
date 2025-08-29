@@ -2,29 +2,36 @@
 <%- include('../partials/header') %>
 
 <main class="home-page">
-    <section class="hero-banner">
-        <div class="hero-banner-content">
-            <div class="hero-banner-main-content">
-                <h2 class="hero-banner-title">Trouvez la mission qui vous correspond.</h2>
-                <div class="hero-banner-text">
-                    <p>Découvrez des annonces claires, accessibles et adaptées à vos talents.</p>
-                    <p>Publiez, éditez ou supprimez vos offres en toute simplicité.</p>
-                </div>
-            </div>
-            <a href="/jobs" class="btn btn-secondary">Découvrez les offres</a>
+  <section class="hero-banner">
+    <div class="hero-banner-content">
+      <div class="hero-banner-main-content">
+        <h2 class="hero-banner-title">
+          Trouvez la mission qui vous correspond.
+        </h2>
+        <div class="hero-banner-text">
+          <p>
+            Découvrez des annonces claires, accessibles et adaptées à vos
+            talents.
+          </p>
+          <p>Publiez, éditez ou supprimez vos offres en toute simplicité.</p>
         </div>
-    </section>
-    <section class="full-page">
-        <h2><%= jobOffers.length %> missions disponibles</h2>
-        <div class="job-cards-section">
-            <% jobOffers.forEach((jobOffer, index) => { %>
-                <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
-            <% }) %>
-        </div>
-        <div class="btn-browse">
-            <a href="/jobs" class="btn btn-primary">Consulter toutes les annonces</a>
-        </div>
-    </section>
+      </div>
+      <a href="/jobs" class="btn btn-secondary">Découvrez les offres</a>
+    </div>
+  </section>
+  <section class="full-page">
+    <h2><%= jobOffers.length %> missions disponibles</h2>
+    <ul class="job-cards-section">
+      <li>
+      <% jobOffers.forEach((jobOffer, index) => { %>
+        <%- include('../partials/jobCard', { job: jobOffer, id: index+1 }) %>
+      <% }) %>
+      </li>
+    </ul>
+    <div class="btn-browse">
+      <a href="/jobs" class="btn btn-primary">Consulter toutes les annonces</a>
+    </div>
+  </section>
 </main>
 
 <%- include('../partials/footer') %>

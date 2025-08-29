@@ -1,98 +1,132 @@
 <div class="form-div">
-    <div class="form-field">
-        <label for="title">Titre de l'annonce</label>
-        <input type="text" name="title" id="title" placeholder="Recherche talent junior" value="<%= job?.title || '' %>" required maxlength="50">
-        <% if (errors?.title?.errors?.[0]) { %>
-            <small id="title-error" class="error-msg">
-            <%= errors.title.errors[0] %>
-            </small>
-        <% } %>
-    </div>
-    <div class="form-field">
-        <label for="description">Description de l'offre</label>
-        <textarea name="description" id="description" placeholder="..." class="description-textarea" required maxlength="500"><%= job?.description || '' %></textarea>
-        <% if (errors?.description?.errors?.[0]) { %>
-            <small id="description-error" class="error-msg">
-            <%= errors.description.errors[0] %>
-            </small>
-        <% } %>
-    </div>
-    <div class="form-field">
-        <label for="skills">Compétence(s) Recherchée(s)</label>
-        <select id="skills" required>
-            <option>Sélectionnez les compétences</option>
-            <% skill.forEach(aSkill => { %>
-                <option><%= aSkill %></option>
-            <% }) %>
-        </select>
-        <input name="skills" class="readonly-input" id="list-skills" value="<%= job?.skills?.toString() || '' %>" readonly>
-        <% if (errors?.skills?.errors?.[0]) { %>
-            <small id="skills-error" class="error-msg">
-            <%= errors.skills.errors[0] %>
-            </small>
-        <% } %>
-    </div>
+  <div class="form-field">
+    <label for="title">Titre de l'annonce</label>
+    <input 
+      type="text"
+      name="title"
+      id="title"
+      placeholder="Recherche talent junior"
+      value="<%= job?.title || '' %>"
+      required maxlength="50"
+    />
+    <% if (errors?.title?.errors?.[0]) { %>
+      <small id="title-error" class="error-msg">
+        <%= errors.title.errors[0] %>
+      </small>
+    <% } %>
+  </div>
+  <div class="form-field">
+    <label for="description">Description de l'offre</label>
+    <textarea 
+      name="description"
+      id="description"
+      placeholder="..."
+      class="description-textarea"
+      required
+      maxlength="500"
+    >
+      <%= job?.description || '' %>
+    </textarea>
+    <% if (errors?.description?.errors?.[0]) { %>
+      <small id="description-error" class="error-msg">
+        <%= errors.description.errors[0] %>
+      </small>
+    <% } %>
+  </div>
+  <div class="form-field">
+    <label for="skills">Compétence(s) Recherchée(s)</label>
+    <select id="skills" required>
+      <option>Sélectionnez les compétences</option>
+      <% skill.forEach(aSkill => { %>
+        <option><%= aSkill %></option>
+      <% }) %>
+    </select>
+    <input
+      name="skills"
+      class="readonly-input" 
+      id="list-skills"
+      value="<%= job?.skills?.toString() || '' %>"
+      readonly
+    >
+    <% if (errors?.skills?.errors?.[0]) { %>
+      <small id="skills-error" class="error-msg">
+        <%= errors.skills.errors[0] %>
+      </small>
+    <% } %>
+  </div>
 </div>
 <div class="form-div">
-    <div class="form-line">
-        <div class="form-field">
-            <label for="type">Type de contrat</label>
-            <select name="type" id="type" required>
-                <option>Freelance, CDI, ...</option>
-                <% jobTypes.forEach(type => { %>
-                    <option 
-                        <% if (type === job?.type) { %>
-                            selected
-                        <% } %>
-                    ><%= type %></option>
-                <% }) %>
-            </select>
-            <% if (errors?.type?.errors?.[0]) { %>
-                <small id="type-error" class="error-msg">
-                <%= errors.type.errors[0] %>
-                </small>
+  <div class="form-line">
+    <div class="form-field">
+      <label for="type">Type de contrat</label>
+      <select name="type" id="type" required>
+        <option>Freelance, CDI, ...</option>
+        <% jobTypes.forEach(type => { %>
+          <option 
+            <% if (type === job?.type) { %>
+              selected
             <% } %>
-        </div>
-        <div class="form-field">
-            <label for="startDate">Date onboarding</label>
-            <input type="date" name="start_date" id="startDate" placeholder="jj/mm/aaaa" required
-                <% if(job?.start_date && job.start_date !== "") { %>
-                value="<%= job?.start_date?.toISOString().split('T')[0] || '' %>"
-                <% } %>
-            >
-            <% if (errors?.start_date?.errors?.[0]) { %>
-                <small id="start-date-error" class="error-msg">
-                <%= errors.start_date.errors[0] %>
-                </small>
-            <% } %>
-        </div>
+          ><%= type %></option>
+        <% }) %>
+      </select>
+      <% if (errors?.type?.errors?.[0]) { %>
+        <small id="type-error" class="error-msg">
+          <%= errors.type.errors[0] %>
+        </small>
+      <% } %>
     </div>
-    <div class="form-line">
-        <div class="form-field">
-            <label for="salary">Salaire</label>
-            <input type="text" name="salary" id="salary" placeholder="... €" value="<%= job?.salary?.toString() || '' %>" required>
-            <% if (errors?.salary?.errors?.[0]) { %>
-                <small id="salary-error" class="error-msg">
-                <%= errors.salary.errors[0] %>
-                </small>
-            <% } %>
-        </div>
-        <div class="form-field">
-            <label for="salaryUnit">Unité de salaire</label>
-            <select name="salary_unit" id="salaryUnit" required>
-                <% salaryUnit.forEach(unit => { %>
-                    <option 
-                        <% if (unit === job?.salary_unit) { %>
-                            selected
-                        <% } %>
-                    ><%= unit %></option>
-                <% }) %>
-            </select>
-            <% if (errors?.salary_unit?.errors?.[0]) { %>
-                <small id="salary-unit-error" class="error-msg">
-                <%= errors.salary_unit.errors[0] %>
-                </small>
-            <% } %>
-        </div>
+    <div class="form-field">
+      <label for="startDate">Date onboarding</label>
+      <input 
+        type="date"
+        name="start_date"
+        id="startDate"
+        placeholder="jj/mm/aaaa" 
+        required
+        <% if(job?.start_date && job.start_date !== "") { %>
+          value="<%= job?.start_date?.toISOString().split('T')[0] || '' %>"
+        <% } %>
+      >
+      <% if (errors?.start_date?.errors?.[0]) { %>
+        <small id="start-date-error" class="error-msg">
+          <%= errors.start_date.errors[0] %>
+        </small>
+      <% } %>
     </div>
+  </div>
+  <div class="form-line">
+    <div class="form-field">
+      <label for="salary">Salaire</label>
+      <input 
+        type="text"
+        name="salary"
+        id="salary"
+        placeholder="... €"
+        value="<%= job?.salary?.toString() || '' %>"
+        required
+      />
+      <% if (errors?.salary?.errors?.[0]) { %>
+        <small id="salary-error" class="error-msg">
+          <%= errors.salary.errors[0] %>
+        </small>
+      <% } %>
+    </div>
+    <div class="form-field">
+      <label for="salaryUnit">Unité de salaire</label>
+      <select name="salary_unit" id="salaryUnit" required>
+        <% salaryUnit.forEach(unit => { %>
+          <option 
+            <% if (unit === job?.salary_unit) { %>
+              selected
+            <% } %>
+          ><%= unit %></option>
+        <% }) %>
+      </select>
+      <% if (errors?.salary_unit?.errors?.[0]) { %>
+        <small id="salary-unit-error" class="error-msg">
+          <%= errors.salary_unit.errors[0] %>
+        </small>
+      <% } %>
+    </div>
+  </div>
 </div>
