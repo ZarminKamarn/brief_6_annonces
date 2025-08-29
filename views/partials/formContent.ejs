@@ -24,9 +24,7 @@
       class="description-textarea"
       required
       maxlength="500"
-    >
-      <%= job?.description || '' %>
-    </textarea>
+    ><%= job?.description || '' %></textarea>
     <% if (errors?.description?.errors?.[0]) { %>
       <small id="description-error" class="error-msg">
         <%= errors.description.errors[0] %>
