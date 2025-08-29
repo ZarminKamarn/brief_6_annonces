@@ -50,3 +50,42 @@ export const jobOffers: Array<JobOffer> = [
 export const dataVariables = {
     id: 4
 }
+
+export const skill =  [
+    "HTML",
+    "CSS",
+    "JavaScript",
+    "TypeScript",
+    "React",
+    "VueJS",
+    "PHP",
+    "Symphony",
+    "C",
+    "C#",
+    ".Net",
+    "Java",
+    "Kotlin",
+    "Python",
+    "MySQL",
+    "PostgreSQL",
+    "MongoDB",
+    "PL/SQL",
+    "Git",
+    "API REST",
+    "Faire le café"
+] as const;
+
+export const salaryUnit = [
+    "Brut annuel",
+    "Brut mensuel",
+    "Brut horaire"
+] as const;
+
+export const jobTypes = [
+    "Freelance",
+    "CDI",
+    "CDD",
+    "Interim",
+    "Stage",
+    "Alternance"
+] as const;

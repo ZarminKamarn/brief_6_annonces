@@ -2,7 +2,8 @@ import z from "zod";
 import { dataVariables, jobOffers } from "../data/data";
 import Controller from "../libs/Controller";
 import { addFormSchema, deleteFormSchema, isPasswordCorrect } from "../libs/validators/formSchema";
-import { JobOffer, jobTypes, salaryUnit, Skill, skill } from "../data/types";
+import { JobOffer } from "../data/types";
+import { jobTypes, salaryUnit, skill } from "../data/data";
 
 class JobController extends Controller{
     public displayJobs(){
@@ -83,6 +84,9 @@ class JobController extends Controller{
     public addJob(){
         const result = addFormSchema.safeParse(this.request.body);
         this.request.body.skills = (this.request.body.skills as string).split(",");
+        if(this.request.body.start_date !== ''){
+            this.request.body.start_date = new Date(this.request.body.start_date);
+        }
 
         if (!result.success) {
         // 3.1 Gestion des erreurs du formulaire

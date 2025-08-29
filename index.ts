@@ -21,6 +21,10 @@ app.use(Express.static("public"));
 
 app.use("/", router);
 
+app.use(function(req,res){
+    res.status(404).render('errors/404');
+});
+
 app.listen(PORT, () => {
   console.log(`Le serveur a démarré sur le port ${PORT}`);
 });
